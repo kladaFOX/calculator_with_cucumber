@@ -12,3 +12,9 @@ Feature: Calculator functions
     And I enter second number = '5'
     When I enter "*" sign
     Then I should see '25'
+
+  Scenario: Operation with mistake
+    Given I enter first number
+    And I enter second number
+    When I enter '?' sign
+    Then I should see 'syntax error'

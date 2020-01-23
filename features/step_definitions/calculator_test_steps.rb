@@ -6,10 +6,9 @@ def calculations(num1, num2, operation)
     result = eval(input)
     if (result.is_a? Numeric)
       result.to_s
-    else
-      "syntax error"
     end
   rescue Exception
+    'syntax error'
   end
 end
 
@@ -20,6 +19,14 @@ end
 
 Given("I enter second number = {string}") do |string|
   @num2 = string
+end
+
+Given("I enter first number") do
+  @num1 = rand(10).to_s
+end
+
+Given("I enter second number") do
+  @num2 = rand(10).to_s
 end
 
 When("I enter {string} sign") do |string|
